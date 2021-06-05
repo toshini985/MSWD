@@ -1,0 +1,25 @@
+sequence diagram-code
+----------------------
+title Exercise 0.4 : New Note
+note over browser:
+User inputs the data in the text 
+field (form-element) and then press
+the Save button(form-element).
+end note 
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
+server-->browser: HTTP status code 302
+note right of server:
+This is a URL redirect, with which the server asks the browser to 
+do a new HTTP GET request  to the address 
+defined in the header's Location - the address notes.
+end note
+note over browser:
+The browser reloads the notes Page 
+end note
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+server-->browser: main.css
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+server-->browser: main.js
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+server-->browser: [{content: "Toshini", date: "2021-06-04T12:01:04.555Z"}]
