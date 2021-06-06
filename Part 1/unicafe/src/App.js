@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React,{ useState } from 'react'
 
 const Header = ({ text }) => {
   return <h1>{text}</h1>
